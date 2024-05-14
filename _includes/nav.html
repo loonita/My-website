@@ -1,0 +1,65 @@
+{% assign current = page.url | downcase | split: '/' %}
+
+<div id="nav">
+    <div class="d-md-none">
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+
+                </a>
+            </div>
+        </nav>
+        <div class="container navbar-spacer">
+            <hr/>
+        </div>
+    </div>
+    <div class="d-none d-md-block navbar-top">
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+
+                </a>
+            </div>
+        </nav>
+        <div class="container navbar-spacer">
+            <hr/>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-main">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if current[1] == null %} active {% endif %}" aria-current="page" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current[1] == 'portfolio' %} active {% endif %}>" aria-current="page" href="{{ site.baseurl }}/portfolio">PORTFOLIO</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if current[1] == 'about' %} active {% endif %}>" aria-current="page" href="{{ site.baseurl }}/about">ABOUT ME!</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            LANGUAGE
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://bgm.dev{{ page.url }}">
+                                <img class="locale-flag" src="{{ site.url }}/assets/img/en_gb.png" alt="">
+                                ENGLISH
+                            </a>
+                            <a class="dropdown-item" href="https://bgm.cl{{ page.url }}">
+                                <img class="locale-flag" src="{{ site.url }}/assets/img/es_cl.png" alt="">
+                                ESPAÑOL
+                            </a>
+                        </ul>
+                    </li>
+                </ul>
+                <button onClick="toggleTheme()" class="btn btn-success" type="submit"><i class="fa fa-star-o" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </nav>
+</div>
